@@ -22,7 +22,6 @@ end)
 minetest.register_on_chat_message(function(name, message)
 	if not irc.connected
 	   or message:sub(1, 1) == "/"
-	   or message:sub(1, 5) == "[off]"
 	   or not irc.joined_players[name]
 	   or (not minetest.check_player_privs(name, {shout=true})) then
 		return
